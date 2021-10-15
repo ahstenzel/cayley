@@ -9,10 +9,10 @@ mat4 make_mat4(float x1, float y1, float z1, float w1,
                float x3, float y3, float z3, float w3,
                float x4, float y4, float z4, float w4) {
   mat4 m;
-  m.M4X4_X1 = x1; m.M4X4_Y1 = y1; m.M4X4_Z1 = z1; m.M4X4_W1 = z1;
-  m.M4X4_X2 = x2; m.M4X4_Y2 = y2; m.M4X4_Z2 = z2; m.M4X4_W2 = z1;
-  m.M4X4_X3 = x3; m.M4X4_Y3 = y3; m.M4X4_Z3 = z3; m.M4X4_W3 = z1;
-  m.M4X4_X4 = x3; m.M4X4_Y4 = y3; m.M4X4_Z4 = z3; m.M4X4_W4 = z1;
+  m.M4X4_X1 = x1; m.M4X4_Y1 = y1; m.M4X4_Z1 = z1; m.M4X4_W1 = w1;
+  m.M4X4_X2 = x2; m.M4X4_Y2 = y2; m.M4X4_Z2 = z2; m.M4X4_W2 = w2;
+  m.M4X4_X3 = x3; m.M4X4_Y3 = y3; m.M4X4_Z3 = z3; m.M4X4_W3 = w3;
+  m.M4X4_X4 = x4; m.M4X4_Y4 = y4; m.M4X4_Z4 = z4; m.M4X4_W4 = w4;
   return m;
 }
 
