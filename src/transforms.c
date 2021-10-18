@@ -63,3 +63,25 @@ mat4 matrix_perspecive(float fov, float aspect, float near, float far) {
   t.M4X4_W4 = 0;
   return t;
 }
+
+mat4 matrix_lookat(vec3 pos, vec3 target, vec3 up) {
+  mat4 t1 = mat4_identity;
+  mat4 t2 = matrix_translate(vec3_scale(pos, -1.0f));
+
+  vec3 direction = vec3_normalize(vec3_sub(pos, target));
+  vec3 right = vec3_normalize(vec3_cross(up, direction));
+  vec3 camUp = vec3_cross(direction, right);
+
+  t1.M4X4_X1 = right.X;
+  t1.M4X4_Y1 = camUp.X;
+  t1.M4X4_Z1 = direction.X;
+  t1.M4X4_X2 = right.Y;
+  t1.M4X4_Y2 = camUp.Y;
+  t1.M4X4_Z2 = direction.Y;
+  t1.M4X4_X3 = right.Z;
+  t1.M4X4_Y3 = camUp.Z;
+  t1.M4X4_Z3 = direction.Z;
+
+  return mat4_multiply(t1, t2);
+
+}
